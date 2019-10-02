@@ -12,10 +12,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.heysaladin.karmamodern.R
-import com.heysaladin.karmamodern.adapter.NewsAdapter.MyViewHolder
-import com.heysaladin.karmamodern.model.News
+import com.heysaladin.karmamodern.adapter.DestinationAdapter.MyViewHolder
+import com.heysaladin.karmamodern.model.CategoryGroup
 
-class NewsAdapter(private val mContext: Context?, private var list: List<News>?) :
+class DestinationAdapter(private val mContext: Context?, private var list: List<CategoryGroup>?) :
     RecyclerView.Adapter<MyViewHolder>() {
 
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -38,7 +38,7 @@ class NewsAdapter(private val mContext: Context?, private var list: List<News>?)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_news, parent, false)
+            .inflate(R.layout.item_destination, parent, false)
 
         return MyViewHolder(itemView)
     }
@@ -62,19 +62,15 @@ class NewsAdapter(private val mContext: Context?, private var list: List<News>?)
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val item = list!![position]
-        if(item.title!!.length > 40) {
-            holder.title.text = item.title.toString().substring(0, 40) + "..."
-        } else {
-            holder.title.text = item.title
-        }
-        holder.published_at.text = item.date
-        holder.content.text = item.snippet + "..."
-        holder.author.text = "#" + item.link_label
+        holder.title.text = item.menuName
+        holder.published_at.text = item.menuName
+        holder.content.text = item.subGroupNames?.size.toString() + " Products"//item.menuName + "..."
+        holder.author.text = "#" + item.menuName
         // loading album cover using Glide library
-        Glide.with(mContext).load(item.src).into(holder.thumbnail)
+        Glide.with(mContext).load(item.banner).into(holder.thumbnail)
         holder.title.setOnClickListener {
             /*Goto Detail News*/
-            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("" + item.src))
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("" + item.banner))
             if (mContext != null) {
                 mContext.startActivity(browserIntent)
             }
@@ -85,7 +81,7 @@ class NewsAdapter(private val mContext: Context?, private var list: List<News>?)
         return list!!.size
     }
 
-    fun setData(_data: List<News>) {
+    fun setData(_data: List<CategoryGroup>) {
         this.list = _data
     }
 }

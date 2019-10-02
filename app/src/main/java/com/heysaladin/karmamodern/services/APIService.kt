@@ -18,6 +18,18 @@ object APIService {
             }
             return retrofit
         }
+
+//    val clientNews: Retrofit?
+//        get() {
+//            if (retrofit == null) {
+//                retrofit = Retrofit.Builder()
+//                    .baseUrl(Main.URL_API_FREE)
+//                    .addConverterFactory(GsonConverterFactory.create())
+//                    .build()
+//            }
+//            return retrofit
+//        }
+
 }
 
 

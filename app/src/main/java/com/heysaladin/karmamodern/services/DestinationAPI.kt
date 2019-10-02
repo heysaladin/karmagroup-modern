@@ -5,10 +5,10 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.QueryMap
 
-interface NewsAPI {
+interface DestinationAPI {
 
     /*Get Top Head Lines*/
-    @GET("getAllNews.php/")
-    fun getNewsByCategory(@QueryMap params: Map<String, String>): Call<ResponseBody>
+    @GET("v1.8.5/getKarmaGroups.php/")
+    fun getDestinationByCategory(@QueryMap params: Map<String, String>): Call<ResponseBody>
 
 }
