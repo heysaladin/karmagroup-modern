@@ -9,9 +9,23 @@ import android.widget.TextView
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.navigation.NavigationView
+
+
 
 
 class MainActivity : AppCompatActivity() {
+
+
+    private val mDrawerLayout: DrawerLayout? = null
+    private val mNavigationView: NavigationView? = null
+
+
+    private fun hidedrawermenu() {
+        val menu = mNavigationView?.getMenu()
+        menu?.findItem(R.id.nav_home)!!.isVisible = false
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,8 +33,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
+
         //supportActionBar?.setDisplayShowTitleEnabled(false)
 
+        val mDrawerLayout  = this.findViewById(R.id.drawerLayout) as Toolbar?
+        val mNavigationView  = this.findViewById(R.id.shitstuff) as Toolbar?
         val toolbar = this.findViewById(R.id.toolbar) as Toolbar?
 //        setSupportActionBar(toolbar)
 //        toolbar?.title = "Androidly"
@@ -31,15 +48,82 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
 //
-//        setContentView(R.layout.activity_main)
+//        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+//
+////        setContentView(R.layout.activity_main)
+//
+////        ActionBarTitleGravity();
+//
 
-//        ActionBarTitleGravity();
+//        val mDrawerToggle = ActionBarDrawerToggle(
+//            this,
+//            mDrawerLayout,
+//            toolbar,
+//           R.string.app_name,
+//            R.string.app_name
+//        )
+//
+//        mDrawerLayout.addDrawerListener(mDrawerToggle)
+
+//        mDrawerToggle.syncState()
+//        hidedrawermenu()
+
+//
+//
+//        drawerToggle = object : ActionBarDrawerToggle(
+//            this,
+//            drawerLayout,
+//            toolbar,
+//            R.string.drawer_open,
+//            R.string.drawer_close
+//        ) {
+//            override fun onDrawerClosed(view: View) {
+//                super.onDrawerClosed(view)
+//                setTitle(R.string.app_name)
+//            }
+//
+//            override fun onDrawerOpened(drawerView: View) {
+//                super.onDrawerOpened(drawerView)
+//                setTitle("OPTION")
+//            }
+//        }
+//
+//        drawerToggle.isDrawerIndicatorEnabled = true
+//        drawerLayout.addDrawerListener(drawerToggle)
+//        drawerToggle.syncState()
 
 
 
 
 
     }
+
+//    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+//// Handle navigation view item clicks here.
+//        when (item.itemId) {
+////            R.id.nav_camera-> {
+////// Handle the camera action
+////            }
+//            R.id.nav_gallery-> {
+//
+//            }
+//            R.id.nav_slideshow-> {
+//
+//            }
+////            R.id.nav_manage-> {
+////
+////            }
+//            R.id.nav_share-> {
+//
+//            }
+//            R.id.nav_send-> {
+//
+//            }
+//        }
+//
+//        drawer_layout.closeDrawer(GravityCompat.START)
+//        return true
+//    }
 
 
     @SuppressLint("WrongConstant")
