@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BottomNavFragmentOne">
+
+<!--    <ImageView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="200dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:src="@drawable/jetpack_chart"/>-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="0dp"
+                android:paddingBottom="10dp" />
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="25dp"
+                android:textSize="21dp"
+                android:textStyle="bold|italic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EXCLUSIVE OFFERS" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:clipToPadding="false"
+                android:paddingStart="20dp"
+                android:id="@+id/rc_list_news"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="0dp"
+                android:paddingBottom="10dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

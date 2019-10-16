@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/bottomNavFragment">
+
+    <fragment
+        android:id="@+id/bottomNavFragment"
+        android:name="com.heysaladin.karmagroupmodern.BottomNavFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_bottom_nav" />
+
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.heysaladin.karmagroupmodern.InfoFragment"
+        android:label="Info"
+        tools:layout="@layout/fragment_info" />
+
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.heysaladin.karmagroupmodern.NotificationFragment"
+        android:label="Notification"
+        tools:layout="@layout/fragment_notification" />
+
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.heysaladin.karmagroupmodern.fragment.HomeFragment"
+        android:label="category_fragment"
+        tools:layout="@layout/category_fragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_listNewsFragment"
+            app:destination="@id/listNewsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listNewsFragment"
+        android:name="com.heysaladin.karmagroupmodern.fragment.ListNewsFragment"
+        android:label="list_news_fragment"
+        tools:layout="@layout/list_news_fragment" />
+
+</navigation>

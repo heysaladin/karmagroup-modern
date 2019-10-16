@@ -29,7 +29,7 @@
                 android:layout_height="50dp"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
-                android:src="@drawable/ic_menu" />
+                android:src="@drawable/logo_karma_group" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -42,7 +42,7 @@
                 android:layout_height="50dp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:src="@drawable/ic_search" />
+                android:src="@drawable/logo_karma_group" />
 
         </RelativeLayout>
 

@@ -34,7 +34,7 @@
                 android:layout_marginTop="2dp"
                 android:layout_marginRight="10dp"
                 android:text="23 Mei 2018"
-                android:textColor="@color/secondarytext"
+                android:textColor="@color/cardview_shadow_end_color"
                 android:textSize="10sp" />
 
             <TextView
@@ -92,7 +92,7 @@
                     android:layout_below="@id/title_news"
                     android:layout_marginTop="5dp"
                     android:text="Text Title"
-                    android:textColor="@color/secondarytext"
+                    android:textColor="@color/cardview_shadow_end_color"
                     android:textSize="12sp"
                     android:visibility="gone" />
             </RelativeLayout>

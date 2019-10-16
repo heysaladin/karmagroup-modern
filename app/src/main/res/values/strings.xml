@@ -1,21 +1,10 @@
 <resources>
-    <string name="app_name">Karma Group</string>
-
-    <string name="drawer_open">Open navigation drawer</string>
-    <string name="drawer_close">Close navigation drawer</string>
-
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
-
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_tools">Tools</string>
-    <string name="menu_share">Share</string>
-    <string name="menu_send">Send</string>
-
+    <string name="app_name">NavigationUIDemo</string>
+    <string name="bottomnav_menu_title">BottomNav</string>
+    <string name="info_menu_title">Info</string>
+    <string name="home_bottom_nav_item_title">Home</string>
+    <string name="screen_bottom_nav_title">Screen</string>
+    <string name="info_text">Sample app showcasing use of NavigationUI library to hook two material components BottomNavigationView and NavigationView with nav graph.\n\nFind the source code on github at https://github.com/heysaladin/karmagroup-modern</string>
+    <string name="nav_header_1">Jetpack</string>
+    <string name="nav_header_2">Navigation</string>
 </resources>
