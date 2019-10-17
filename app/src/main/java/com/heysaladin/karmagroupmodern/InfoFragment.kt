@@ -18,7 +18,7 @@ class InfoFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         activity!!.active_fragment_logo.visibility = View.GONE
         activity!!.active_fragment_title.visibility = View.VISIBLE
-        activity!!.active_fragment_title.setText("Info Aja")
+        activity!!.active_fragment_title.setText("Search")
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_info, container, false)
     }

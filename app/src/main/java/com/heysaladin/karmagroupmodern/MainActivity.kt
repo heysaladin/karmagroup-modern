@@ -99,7 +99,7 @@ class MainActivity : AppCompatActivity() {
         val inflater = menuInflater
         inflater.inflate(R.menu.menu_option, menu)
                 val menuItem = menu.findItem(R.id.notificationFragment)
-        menuItem.icon = Converter.convertLayoutToImage(this@MainActivity, 1, R.drawable.ic_notifications_black_24dp)
+        menuItem.icon = Converter.convertLayoutToImage(this@MainActivity, 3, R.drawable.bell)
         return super.onCreateOptionsMenu(menu)
     }
 

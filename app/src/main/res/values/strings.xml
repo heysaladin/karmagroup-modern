@@ -3,8 +3,12 @@
     <string name="bottomnav_menu_title">BottomNav</string>
     <string name="info_menu_title">Info</string>
     <string name="home_bottom_nav_item_title">Home</string>
-    <string name="screen_bottom_nav_title">Screen</string>
+    <string name="booking_bottom_nav_title">Booking</string>
+    <string name="contact_bottom_nav_title">Contact</string>
+    <string name="chat_bottom_nav_title">Chat</string>
     <string name="info_text">Sample app showcasing use of NavigationUI library to hook two material components BottomNavigationView and NavigationView with nav graph.\n\nFind the source code on github at https://github.com/heysaladin/karmagroup-modern</string>
     <string name="nav_header_1">Jetpack</string>
     <string name="nav_header_2">Navigation</string>
+    <string name="guest_home_menu_title">Guest Home</string>
+    <string name="searching_menu_title">Search</string>
 </resources>

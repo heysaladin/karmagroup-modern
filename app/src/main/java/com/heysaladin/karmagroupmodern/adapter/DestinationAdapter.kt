@@ -1,5 +1,6 @@
 package com.heysaladin.karmagroupmodern.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -60,11 +61,16 @@ class DestinationAdapter(private val mContext: Context?, private var list: List<
 //        }
 //    }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val item = list!![position]
         holder.title.text = item.menuName
         holder.published_at.text = item.menuName
-        holder.content.text = item.subGroupNames?.size.toString() + " Products"//item.menuName + "..."
+        if(item.subGroupNames?.size!! < 2) {
+            holder.content.text = item.subGroupNames?.size.toString() + " Product"
+        }else {
+            holder.content.text = item.subGroupNames?.size.toString() + " Products"//item.menuName + "..."
+        }
         holder.author.text = "#" + item.menuName
         // loading album cover using Glide library
         Glide.with(mContext).load(item.banner).into(holder.thumbnail)

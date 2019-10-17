@@ -20,4 +20,9 @@
         android:name="com.heysaladin.karmagroupmodern.BottomNavFragmentThree"
         tools:layout="@layout/fragment_bottom_nav_fragment_three"/>
 
+    <fragment
+        android:id="@+id/bottomNavFragmentFour"
+        android:name="com.heysaladin.karmagroupmodern.BottomNavFragmentFour"
+        tools:layout="@layout/fragment_bottom_nav_fragment_four"/>
+
 </navigation>

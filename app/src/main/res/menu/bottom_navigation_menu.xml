@@ -3,15 +3,19 @@
 
     <item
         android:id="@+id/bottomNavFragmentOne"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@drawable/home"
         android:title="@string/home_bottom_nav_item_title"/>
     <item
         android:id="@+id/bottomNavFragmentTwo"
-        android:icon="@drawable/ic_exposure_plus_1_black_24dp"
-        android:title="@string/screen_bottom_nav_title"/>
+        android:icon="@drawable/book"
+        android:title="@string/booking_bottom_nav_title"/>
     <item
         android:id="@+id/bottomNavFragmentThree"
-        android:icon="@drawable/ic_exposure_plus_2_black_24dp"
-        android:title="@string/screen_bottom_nav_title"/>
+        android:icon="@drawable/contact"
+        android:title="@string/contact_bottom_nav_title"/>
+    <item
+        android:id="@+id/bottomNavFragmentFour"
+        android:icon="@drawable/chat"
+        android:title="@string/chat_bottom_nav_title"/>
 
 </menu>

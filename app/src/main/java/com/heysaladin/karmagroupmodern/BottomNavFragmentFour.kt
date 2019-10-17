@@ -12,14 +12,14 @@ import kotlinx.android.synthetic.main.activity_main.*
 /**
  * A simple [Fragment] subclass.
  */
-class BottomNavFragmentThree : Fragment() {
+class BottomNavFragmentFour : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         activity!!.active_fragment_logo.visibility = View.GONE
         activity!!.active_fragment_title.visibility = View.VISIBLE
-        activity!!.active_fragment_title.setText("Contact Us!")
+        activity!!.active_fragment_title.setText("Live Chat")
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bottom_nav_fragment_three, container, false)
+        return inflater.inflate(R.layout.fragment_bottom_nav_fragment_four, container, false)
     }
 }
