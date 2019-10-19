@@ -69,14 +69,14 @@ class BeachAdapter(private val mContext: Context?, private var list: List<Beach>
         } else {
             holder.title.text = item.title
         }
-        holder.published_at.text = item.date
-        holder.content.text = item.snippet + "..."
-        holder.author.text = "#" + item.link_label
+        holder.published_at.text = item.day
+        holder.content.text = item.title + "..."
+        holder.author.text = "#" + item.time_s
         // loading album cover using Glide library
-        Glide.with(mContext).load(item.src).into(holder.thumbnail)
+        Glide.with(mContext).load("https://karmagroup.com/karma-beach/images/events/" + item.bg).into(holder.thumbnail)
         holder.title.setOnClickListener {
             /*Goto Detail Offers*/
-            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("" + item.src))
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://karmagroup.com/karma-beach/images/events/" + item.bg))
             if (mContext != null) {
                 mContext.startActivity(browserIntent)
             }

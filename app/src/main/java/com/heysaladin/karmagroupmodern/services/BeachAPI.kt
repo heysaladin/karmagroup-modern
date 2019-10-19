@@ -9,7 +9,7 @@ import retrofit2.http.QueryMap
 interface BeachAPI {
 
     /*Get Top Head Lines*/
-    @GET("getAllNews.php/")
+    @GET("karma-beach/api/?method=getEvents&filter=onGoing&usedIn=app")
     fun getNewsByCategory(@QueryMap params: Map<String, String>): retrofit2.Call<ResponseBody>
 
 }

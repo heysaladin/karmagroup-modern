@@ -10,14 +10,23 @@ class Beach {
 //    var publishedAt: String? = null
 //    var content: String? = null
 
+    var type: String? = null
+    var day: String? = null
+    var dt: String? = null
+    var mo: String? = null
+    var yr: String? = null
+    var title_s: String? = null
+    var time_s: String? = null
+    var title_f: String? = null
+    var time_f: String? = null
     var title: String? = null
-    var date: String? = null
-    var path: String? = null
-    var src: String? = null
-    var snippet: String? = null
-    var content: String? = null
-    var link: String? = null
-    var link_label: String? = null
+    var bg: String? = null
+    var bgm: String? = null
+    var modal_boxs: String? = null
+    var modal_title: String? = null
+    var modal_note: String? = null
+    var style: String? = null
+    var modal_note_2: String? = null
 
 
 

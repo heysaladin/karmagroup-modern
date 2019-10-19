@@ -9,6 +9,7 @@ import com.heysaladin.karmagroupmodern.model.News
 import com.heysaladin.karmagroupmodern.model.response.ListBeachReponse
 import com.heysaladin.karmagroupmodern.model.response.ListNewsReponse
 import com.heysaladin.karmagroupmodern.services.APIService
+import com.heysaladin.karmagroupmodern.services.APIServiceWeb
 import com.heysaladin.karmagroupmodern.services.BeachAPI
 import com.heysaladin.karmagroupmodern.services.NewsAPI
 //import com.heysaladin.karmamodern.model.News
@@ -26,7 +27,7 @@ class BeachRepository {
     private val web_service: BeachAPI
 
     init {
-        web_service = APIService.client?.create(BeachAPI::class.java)!!
+        web_service = APIServiceWeb.client?.create(BeachAPI::class.java)!!
     }
 
     fun getBeach(category: String): LiveData<List<Beach>> {
@@ -46,14 +47,15 @@ class BeachRepository {
 
                 if (response.isSuccessful) {
                     try {
-                        val _data = "{\"status\": \"success\", \"news\": " + response.body().string().replace("\"content\":[","\"content\":").replace("],\"link\"",",\"link\"").replace("],\"snippet\"",",\"snippet\"") + "}"
+                        val _data = "{\"status\": \"success\", \"beach\": " + response.body().string()//.replace("{\"data\":[{","[{").replace("}]}","}]")
                         Log.d("JSON", _data)
+//                        var _dataObject:Beach = (Beach(_data))
                         val mGson = Gson()
-//                        Log.e("REPO", "///////// " + _data.toString())
+                        Log.e("REPO", "///////// " + _data.toString())
                         val response_data = mGson.fromJson(_data, ListBeachReponse::class.java)
                         if (response_data != null) {
                             //data.value = response_data.articles
-                            data.value = response_data.news
+                            data.value = response_data.beach
                         }
                     } catch (e: IOException) {
                         e.printStackTrace()
