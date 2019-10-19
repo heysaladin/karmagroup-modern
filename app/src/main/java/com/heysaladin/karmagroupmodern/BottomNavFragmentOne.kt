@@ -11,12 +11,18 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.heysaladin.karmagroupmodern.adapter.BeachAdapter
 import com.heysaladin.karmagroupmodern.adapter.DestinationAdapter
 import com.heysaladin.karmagroupmodern.adapter.NewsAdapter
+import com.heysaladin.karmagroupmodern.adapter.OffersAdapter
+import com.heysaladin.karmagroupmodern.repository.BeachRepository
 import com.heysaladin.karmagroupmodern.repository.DestinationRepository
 import com.heysaladin.karmagroupmodern.repository.NewsRepository
+import com.heysaladin.karmagroupmodern.repository.OffersRepository
+import com.heysaladin.karmagroupmodern.viewmodel.BeachModel
 import com.heysaladin.karmagroupmodern.viewmodel.DestinationModel
 import com.heysaladin.karmagroupmodern.viewmodel.NewsModel
+import com.heysaladin.karmagroupmodern.viewmodel.OffersModel
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.ArrayList
 
@@ -33,6 +39,14 @@ class BottomNavFragmentOne : Fragment() {
     internal lateinit var viewModelNews: NewsModel
     internal lateinit var rc_listNews: RecyclerView
     internal lateinit var adapterNews: NewsAdapter
+
+    internal lateinit var viewModelOffers: OffersModel
+    internal lateinit var rc_listOffers: RecyclerView
+    internal lateinit var adapterOffers: OffersAdapter
+
+    internal lateinit var viewModelBeach: BeachModel
+    internal lateinit var rc_listBeach: RecyclerView
+    internal lateinit var adapterBeach: BeachAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -105,6 +119,41 @@ class BottomNavFragmentOne : Fragment() {
 
 
 
+
+        rc_listOffers = view.findViewById(R.id.rc_list_offers)
+        // Assign View Model from News View Model
+        viewModelOffers = ViewModelProviders.of(this).get(OffersModel::class.java)
+        viewModelOffers.init(OffersRepository())
+        //instantiate news adapter
+        adapterOffers = OffersAdapter(context, ArrayList())
+        val layoutManagerOffers = LinearLayoutManager(
+            context, RecyclerView.HORIZONTAL,
+            false
+        )
+        rc_listOffers.layoutManager = layoutManagerOffers
+//        val snapHelperNews = PagerSnapHelper() // Or PagerSnapHelper
+//        snapHelperNews.attachToRecyclerView(rc_listNews)
+        rc_listOffers.adapter = adapterOffers
+
+
+
+
+        rc_listBeach = view.findViewById(R.id.rc_list_beach)
+        // Assign View Model from News View Model
+        viewModelBeach = ViewModelProviders.of(this).get(BeachModel::class.java)
+        viewModelBeach.init(BeachRepository())
+        //instantiate news adapter
+        adapterBeach = BeachAdapter(context, ArrayList())
+        val layoutManagerBeach = LinearLayoutManager(
+            context, RecyclerView.HORIZONTAL,
+            false
+        )
+        rc_listBeach.layoutManager = layoutManagerBeach
+//        val snapHelperNews = PagerSnapHelper() // Or PagerSnapHelper
+//        snapHelperNews.attachToRecyclerView(rc_listNews)
+        rc_listBeach.adapter = adapterBeach
+
+
     }
 
     fun initList() {
@@ -118,6 +167,16 @@ class BottomNavFragmentOne : Fragment() {
             viewModelNews.getNewsByCategory(it).observe(this, Observer { news ->
                 adapterNews.setData(news)
                 adapterNews.notifyDataSetChanged()
+            })
+
+            viewModelOffers.getOffersByCategory(it).observe(this, Observer { news ->
+                adapterOffers.setData(news)
+                adapterOffers.notifyDataSetChanged()
+            })
+
+            viewModelBeach.getBeachByCategory(it).observe(this, Observer { news ->
+                adapterBeach.setData(news)
+                adapterBeach.notifyDataSetChanged()
             })
 
         }
