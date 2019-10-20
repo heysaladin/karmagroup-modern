@@ -7,26 +7,26 @@ package com.heysaladin.karmagroupmodern.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.heysaladin.karmagroupmodern.model.Beach
+import com.heysaladin.karmagroupmodern.model.CategoryGroup
 import com.heysaladin.karmagroupmodern.model.News
 import com.heysaladin.karmagroupmodern.repository.BeachRepository
+import com.heysaladin.karmagroupmodern.repository.DestinationRepository
 import com.heysaladin.karmagroupmodern.repository.NewsRepository
 //import com.heysaladin.karmamodern.model.News
 //import com.heysaladin.karmamodern.repository.NewsRepository
 
-class BeachModel : ViewModel() {
+class BeachModel  : ViewModel() {
     /*Define Attribute*/
-    private var repo: BeachRepository? = null
-//    private var repoDestination: DestinationRepository? = null
-    internal lateinit var list_news: LiveData<List<Beach>>
-//    internal lateinit var list_destination: LiveData<List<CategoryGroup>>
+    private var repoBeach: BeachRepository? = null
+    internal lateinit var list_beach: LiveData<List<Beach>>
 
-    fun init(repo: BeachRepository) {
-        this.repo = repo
+    fun init(repoBeach: BeachRepository) {
+        this.repoBeach = repoBeach
     }
 
     fun getBeachByCategory(categ: String): LiveData<List<Beach>> {
-        list_news = this.repo!!.getBeach(categ)
-        return this.list_news
+        list_beach = this.repoBeach!!.getBeach(categ)
+        return this.list_beach
     }
 
 
