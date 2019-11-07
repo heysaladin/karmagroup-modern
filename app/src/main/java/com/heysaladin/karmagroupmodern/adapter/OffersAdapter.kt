@@ -64,19 +64,19 @@ class OffersAdapter(private val mContext: Context?, private var list: List<Offer
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val item = list!![position]
-        if(item.title!!.length > 40) {
-            holder.title.text = item.title.toString().substring(0, 40) + "..."
+        if(item.offerTitle!!.length > 40) {
+            holder.title.text = item.offerTitle.toString().substring(0, 40) + "..."
         } else {
-            holder.title.text = item.title
+            holder.title.text = item.offerTitle
         }
-        holder.published_at.text = item.date
-        holder.content.text = item.snippet + "..."
-        holder.author.text = "#" + item.link_label
+        holder.published_at.text = item.mobileNumber
+        holder.content.text = item.description + "..."
+        holder.author.text = "#" + item.link
         // loading album cover using Glide library
-        Glide.with(mContext).load(item.src).into(holder.thumbnail)
+        Glide.with(mContext).load(item.offerImages!![0]).into(holder.thumbnail)
         holder.title.setOnClickListener {
             /*Goto Detail Offers*/
-            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("" + item.src))
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("" + item.offerImages!![0]))
             if (mContext != null) {
                 mContext.startActivity(browserIntent)
             }

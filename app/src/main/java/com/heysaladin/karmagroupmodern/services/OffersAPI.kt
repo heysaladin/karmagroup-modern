@@ -9,7 +9,7 @@ import retrofit2.http.QueryMap
 interface OffersAPI {
 
     /*Get Top Head Lines*/
-    @GET("getAllNews.php/")
+    @GET("karmaOffers.php/")
     fun getOffersByCategory(@QueryMap params: Map<String, String>): retrofit2.Call<ResponseBody>
 
 }

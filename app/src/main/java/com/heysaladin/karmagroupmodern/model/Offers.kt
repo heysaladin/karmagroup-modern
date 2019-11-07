@@ -10,14 +10,14 @@ class Offers {
 //    var publishedAt: String? = null
 //    var content: String? = null
 
-    var title: String? = null
-    var date: String? = null
-    var path: String? = null
-    var src: String? = null
-    var snippet: String? = null
-    var content: String? = null
+    var offerTitle: String? = null
+    var description: String? = null
+    var mobileNumber: String? = null
+    var address: Array<String>? = null
+    var terms: String? = null
+    var offerImages: Array<String>? = null
+    var offerInclusions: Array<String>? = null
     var link: String? = null
-    var link_label: String? = null
 
 
 

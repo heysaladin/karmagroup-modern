@@ -39,14 +39,15 @@ class OffersRepository {
 
                 if (response.isSuccessful) {
                     try {
-                        val _data = "{\"status\": \"success\", \"news\": " + response.body().string().replace("\"content\":[","\"content\":").replace("],\"link\"",",\"link\"").replace("],\"snippet\"",",\"snippet\"") + "}"
-                        Log.d("JSON", _data)
+//                        val _data = "{\"status\": \"success\", \"news\": " + response.body().string().replace("\"content\":[","\"content\":").replace("],\"link\"",",\"link\"").replace("],\"snippet\"",",\"snippet\"") + "}"
+                        val _data = response.body().string()
+                            Log.d("JSON", _data)
                         val mGson = Gson()
 //                        Log.e("REPO", "///////// " + _data.toString())
                         val response_data = mGson.fromJson(_data, ListOffersReponse::class.java)
                         if (response_data != null) {
                             //data.value = response_data.articles
-                            data.value = response_data.news
+                            data.value = response_data.offers
                         }
                     } catch (e: IOException) {
                         e.printStackTrace()

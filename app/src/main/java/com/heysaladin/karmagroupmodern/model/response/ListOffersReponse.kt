@@ -8,6 +8,6 @@ class ListOffersReponse {
     var status: String? = null
     var totalResults: Int = 0
     //var articles: List<News>? = null
-    var offers: List<CategoryGroup>? = null
-    var news: List<Offers>? = null
+    var offers: List<Offers>? = null
+//    var news: List<CategoryGroup>? = null
 }
