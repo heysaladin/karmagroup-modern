@@ -23,6 +23,9 @@ class BeachAdapter(private val mContext: Context?, private var list: List<Beach>
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var title: TextView
         var published_at: TextView
+        var date: TextView
+        var day: TextView
+        var mon: TextView
         var content: TextView
         var author: TextView
         var thumbnail: ImageView
@@ -32,6 +35,9 @@ class BeachAdapter(private val mContext: Context?, private var list: List<Beach>
             title = view.findViewById<View>(R.id.title_news) as TextView
             content = view.findViewById<View>(R.id.content) as TextView
             published_at = view.findViewById<View>(R.id.published_at) as TextView
+            date = view.findViewById<View>(R.id.date) as TextView
+            day = view.findViewById<View>(R.id.day) as TextView
+            mon = view.findViewById<View>(R.id.mon) as TextView
             thumbnail = view.findViewById<View>(R.id.thumbnail) as ImageView
             author = view.findViewById<View>(R.id.author) as TextView
             panel = view.findViewById(R.id.panel)
@@ -40,7 +46,7 @@ class BeachAdapter(private val mContext: Context?, private var list: List<Beach>
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_news, parent, false)
+            .inflate(R.layout.item_beach, parent, false)
 
         return MyViewHolder(itemView)
     }
@@ -70,7 +76,10 @@ class BeachAdapter(private val mContext: Context?, private var list: List<Beach>
             holder.title.text = item.title
         }
         holder.published_at.text = item.day
-        holder.content.text = item.title + "..."
+        holder.date.text = item.dt
+        holder.day.text = item.day
+        holder.mon.text = item.mo
+        holder.content.text = item.modal_title // + "..."
         holder.author.text = "#" + item.time_s
         // loading album cover using Glide library
         Glide.with(mContext).load("https://karmagroup.com/karma-beach/images/events/" + item.bg).into(holder.thumbnail)
