@@ -72,13 +72,16 @@ class OffersAdapter(private val mContext: Context?, private var list: List<Offer
         holder.published_at.text = item.mobileNumber
         holder.content.text = item.description + "..."
         holder.author.text = "#" + item.link
-        // loading album cover using Glide library
-        Glide.with(mContext).load(item.offerImages!![0]).into(holder.thumbnail)
-        holder.title.setOnClickListener {
-            /*Goto Detail Offers*/
-            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("" + item.offerImages!![0]))
-            if (mContext != null) {
-                mContext.startActivity(browserIntent)
+        if (item.offerImages!!.size>0) {
+            // loading album cover using Glide library
+            Glide.with(mContext).load(item.offerImages!![0]).into(holder.thumbnail)
+            holder.title.setOnClickListener {
+                /*Goto Detail Offers*/
+                val browserIntent =
+                    Intent(Intent.ACTION_VIEW, Uri.parse("" + item.offerImages!![0]))
+                if (mContext != null) {
+                    mContext.startActivity(browserIntent)
+                }
             }
         }
     }

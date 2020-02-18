@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -72,8 +73,29 @@ class DestinationAdapter(private val mContext: Context?, private var list: List<
             holder.content.text = item.subGroupNames?.size.toString() + " Products"//item.menuName + "..."
         }
         holder.author.text = "#" + item.menuName
-        // loading album cover using Glide library
-        Glide.with(mContext).load(item.banner).into(holder.thumbnail)
+        // Log.e("NAME:", ">>>>>>>>>>>>>>>>>>>>>> " + item.menuName)
+        if(item.menuName.equals("Karma Resorts")) {
+            Glide.with(mContext).load("https://storage.googleapis.com/karmagroup-d66ca.appspot.com/karmagroupcdn/2018/08/d9b1af60-karma-group-og-image.jpg").into(holder.thumbnail)
+        } else if(item.menuName.equals("Karma Retreats")) {
+            Glide.with(mContext).load("https://storage.googleapis.com/karmagroup-d66ca.appspot.com/karmagroupcdn/2016/10/Karma-Mayura-Header-D.jpg").into(holder.thumbnail)
+        }  else if(item.menuName.equals("Karma Royal")) {
+            Glide.with(mContext).load("https://karmagroup.com/wp-content/uploads/2016/10/5.__Karma-Royal-Palms-Karma_Royal_Palms__Pool_Area.jpg").into(holder.thumbnail)
+        }  else if(item.menuName.equals("Karma Royal Residences")) {
+            Glide.with(mContext).load("https://storage.googleapis.com/karmagroup-d66ca.appspot.com/karmagroupcdn/Destinations/Karma-Royal-Residences/Karma-Palacio-Elefante/Gallery/Karma-Palacio-Elefante-India-Gallery-12.jpg").into(holder.thumbnail)
+        }  else if(item.menuName.equals("Karma Estate")) {
+            Glide.with(mContext).load("https://storage.googleapis.com/karmagroup-d66ca.appspot.com/karmagroupblogcdn/2017/04/le-preverger-st-tropez-karma-group-940x627.jpg").into(holder.thumbnail)
+        }  else if(item.menuName.equals("Karma Sanctum")) {
+            Glide.with(mContext).load("https://hirespace.imgix.net/spaces/163421/r4a42nyzvoq.jpg").into(holder.thumbnail)
+        }  else if(item.menuName.equals("Karma Beach")) {
+            Glide.with(mContext).load("https://cdn.water-sports-bali.com/wp-content/uploads/2019/04/Karma-Beach-Ungasan-Bali-Feature-Image.jpg").into(holder.thumbnail)
+        }  else if(item.menuName.equals("Karma Restaurants")) {
+            Glide.with(mContext).load("https://www.threesixtyguides.com/wp-content/uploads/2015/12/dimare-0.jpg").into(holder.thumbnail)
+        }  else if(item.menuName.equals("Karma Spa")) {
+            Glide.with(mContext).load("https://media.travelingyuk.com/wp-content/uploads/2019/02/karma.kandara.bali_15_2_2019_16_39_6_173-1024x683.jpg").into(holder.thumbnail)
+        } else {
+            // loading album cover using Glide library
+            Glide.with(mContext).load(item.banner).into(holder.thumbnail)
+        }
         holder.title.setOnClickListener {
             /*Goto Detail News*/
             val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("" + item.banner))

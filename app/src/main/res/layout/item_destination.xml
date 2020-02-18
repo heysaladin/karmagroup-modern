@@ -63,6 +63,7 @@
                 android:layout_weight="0.4"
                 android:layout_height="match_parent" />
             <RelativeLayout
+                android:background="@drawable/gradient_overlay"
                 android:padding="25dp"
                 android:layout_alignParentBottom="true"
                 android:layout_width="match_parent"
